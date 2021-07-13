@@ -130,3 +130,6 @@ dmypy.json
 
 # AUV
 *.txt
+*.jsonl
+*.gz
+*.bz2
