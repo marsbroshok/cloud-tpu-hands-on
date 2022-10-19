@@ -5,12 +5,23 @@ https://cloud-dot-devsite-v2-prod.appspot.com/tpu/docs/tutorials
 https://cloud.google.com/tpu/docs/profile-tpu-vm
 
 
+### Create TPU Node
+```
+gcloud compute tpus execution-groups create --name=auv-cloud-tpu \
+  --zone=us-central1-b \
+  --tf-version=2.10.0 \
+  --machine-type=n1-standard-1 \
+  --accelerator-type=v2-8 \
+  --network=vpc-network-1 
+```
+
+
 ### Create TPU VM helpers:
 ```
 PROJECT_ID=sunny-avocado
 gsutil mb -c standard -l us-central1 gs://tpu-train-test-auv
 
-TPU_NAME=auv-tpu-vm-3
+TPU_NAME=auv-tpu-vm-1
 
 gcloud compute tpus tpu-vm create $TPU_NAME \
   --zone=us-central1-b \
